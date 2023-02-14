@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -30,6 +30,11 @@ function Nav() {
         item.qut = 0
         setAddToCart([...Added])
 
+    }
+
+    const HandleTwostate = () => {
+        setTogCart(Boolean(false))
+        setTog(Boolean(!tog))
     }
 
     const stayls = {
@@ -67,10 +72,14 @@ function Nav() {
             Cart.visibility = "visible"
 
         } else {
-            Cart.maxHeight = "44px"
+            Cart.maxHeight = "44px "
             Cart.visibility = "hidden"
         }
     }, [togCart])
+
+
+
+
 
 
 
@@ -78,25 +87,24 @@ function Nav() {
         <nav className="navbar navbar-expand-lg bg-white p-3">
             <div className="container">
                 <div style={stayls} >
-                    {/* <img className="navbar-brand w-100 h-100" src="https://themewagon.github.io/famms/images/logo.png" alt="img" /> */}
-                    <p className='m-0'>Buy<span className='text-danger'>F</span>ast</p>
+                    <Link className='p-0 logo' to="/"><p className='m-0' style={{ color: "black" }}>Buy<span className='text-danger'>F</span>ast</p></Link>
                 </div>
                 <button onClick={() => setTog(Boolean(!tog))} className={styleNav.buttonNav} >
                     <i className="fa-solid fa-bars"></i>
                 </button>
                 <div className="" >
                     <ul ref={UL} className={`navbar-nav ms-auto ${styleNav.ulNav}`}>
-                        <div onClick={() => setTog(Boolean(!tog))} className={styleNav.exit}>
+                        <div onClick={() => HandleTwostate()} className={styleNav.exit}>
                             <i className="fa-solid fa-circle-xmark"></i>
                         </div>
                         <li className="nav-item">
-                            <NavLink className={`nav-link ${styleNav.a}`} aria-current="page" to="/">Home</NavLink>
+                            <NavLink onClick={() => setTog(!tog)} className={`nav-link ${styleNav.a}`} aria-current="page" to="/">Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className={`nav-link ${styleNav.a}`} to="/cards">cards</NavLink>
+                            <NavLink onClick={() => setTog(!tog)} className={`nav-link ${styleNav.a}`} to="/cards">cards</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/products" className={`nav-link ${styleNav.a}`} >Products</NavLink>
+                            <NavLink onClick={() => setTog(!tog)} to="/products" className={`nav-link ${styleNav.a}`} >Products</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className={`nav-link ${styleNav.a} disabled`} to="/blog" >Blog</NavLink>
@@ -104,14 +112,14 @@ function Nav() {
                         <li className="nav-item">
                             <NavLink className={`nav-link ${styleNav.a} disabled`} to="/contact">Contact</NavLink>
                         </li>
-                        <li className="nav-item align-items-center position-relative d-none d-lg-flex ms-lg-2 me-lg-4 ">
+                        <li className="nav-item align-items-center position-relative  d-flex ms-lg-2 me-lg-4 p-3 p-lg-0">
                             <div className='position-relative'>
                                 <Badge onClick={() => setTogCart(Boolean(!togCart))} badgeContent={Added.length} color="error">
                                     <ShoppingCartIcon />
                                 </Badge>
                             </div>
                             <div ref={Carts} className={styleNav.carts}>
-                                {Added.length > 0 ? 'All items': "No Added Items " }
+                                {Added.length > 0 ? 'All items' : "No Added Items "}
                                 <div className={styleNav.projects}>
                                     {Added.map((item) => {
                                         return (
@@ -123,7 +131,7 @@ function Nav() {
                                                         </Typography>
                                                     }
                                                     title={item.category.length <= 10 ? item.category : item.category.slice(0, 11)}
-                                                    subheader={`$${item.price * item.qut}`}
+                                                    subheader={`$${(item.price * item.qut).toFixed(2)}`}
 
                                                 />
                                                 <span style={{ marginRight: "10px", display: "flex", alignItems: "center" }}>

@@ -1,3 +1,27 @@
+@media (max-width: 992px) {
+    .carts{
+        position: absolute;
+        background-color: rgb(218 218 218);
+        width: 95% !important;
+        top: 56px;
+        transform: translateX(-5%) !important;
+        padding: 10px 10px 20px 10px;
+        transition: 300ms !important;
+        user-select: text;
+        overflow: auto;
+        border-radius: 7px;
+        user-select: none;
+        height: 340px !important;
+        margin-top: 20px;
+    }
+    .projects{
+        margin-top: 10px;
+        transition: 300ms !important;
+        width: 100%;
+    }
+    
+}
+
 a{
     padding: 5px 20px !important;
     font-weight: 700 !important;

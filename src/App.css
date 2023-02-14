@@ -2,10 +2,27 @@
     section {
         height: 60vh !important;
     }
+    .MuiSvgIcon-root{
+        color: rgb(255, 255, 255) !important;
+        font-size: 40px !important;
+        margin-left: 5px;
+    }
+
+}
+
+@media (max-width: 465px) {
+    .carousel-indicators {
+        bottom: 0% !important;
+    }
+}
+
+.logo{
+    font-size: 30px !important;
+    text-decoration: none ;
 }
 
 .carousel-indicators {
-    bottom: 12% !important;
+    bottom: 12%  ;
     width: 30%;
 }
 
@@ -52,3 +69,4 @@ nav {
     height: 4px;
     background-color: #f7444e;
 }
+

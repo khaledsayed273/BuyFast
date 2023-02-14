@@ -51,9 +51,9 @@ const Cards = ({ Data }) => {
                                                 alt="green iguana"
                                                 sx={{ objectFit: "contain", padding: "20px 20px 0" }}
                                             />
-                                            <CardContent>
-                                                <Typography paddingX={"20px"} sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "20px" }} gutterBottom component="div">
-                                                    <Typography sx={{ fontWeight: "bold", fontSize: "20px", textTransform: "capitalize" }} variant='h5'>{item.category.length <= 10 ? item.category : item.category.slice(0, 11)}</Typography>
+                                            <CardContent >
+                                                <Typography sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "20px" }} gutterBottom component="div">
+                                                    <Typography sx={{ fontWeight: "bold", fontSize: "20px", textTransform: "capitalize" }} variant='h5'>{item.category.length <= 10 ? item.category : item.category.slice(0, 16)}</Typography>
                                                     <Typography variant='h5'>${item.price}</Typography>
                                                 </Typography>
                                             </CardContent>
