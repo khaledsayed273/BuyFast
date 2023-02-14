@@ -1,0 +1,49 @@
+@media (max-width: 992px) {
+    .h3{
+        font-size: 1.5rem !important;
+    }
+    .parentText{
+        width: 75% !important;
+    }
+    .text{
+        width: 75% !important;
+    }
+    
+}
+.h2{
+    color: #002c3e;
+    font-size: 2.5rem;
+    margin: 5px 0 20px 0 ;
+}
+
+.h3{
+    color: #f7444e;
+    font-size: 3rem;
+}
+.text{
+    width: 50%;
+}
+
+.parentText{
+    width: 50% ;
+}
+
+.card{
+    min-height: 230px;
+    background-color: #002c3e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.card svg{
+    font-size: 35px;
+}
+
+.NewArrival{
+    background-color: #d4ced0;
+    margin: 60px 0;
+    height: 500px;
+}
