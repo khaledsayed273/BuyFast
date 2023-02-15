@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styleHome from './home.module.css'
 import img from '../imges/arrival-bg2-removebg-preview.png'
 import Cards from './cards/CardComponent'
@@ -66,8 +66,14 @@ function Home() {
         },
     ]
 
+    const ref = useRef(null)
 
-    
+    const HandleScroll = (refrance) => {
+        window.scrollTo({
+            top: refrance.current.offsetTop,
+            behavior: "smooth"
+        })
+    }
 
     return (
         <>
@@ -142,7 +148,7 @@ function Home() {
                             <div className="right d-flex flex-column align-items-start justify-content-center h-100">
                                 <h2 className='mb-4'>#NewArrivals</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptatem, maxime aliquid nulla obcaecati consequatur nobis dolorem delectus eos modi?</p>
-                                <a href='#Cards' className='btn btn-danger mt-2 text-white'>Shop Now</a>
+                                <button onClick={(() => HandleScroll(ref))} href='#Cards' className='btn btn-danger mt-2'>Shop Now</button>
                             </div>
                         </div>
 
@@ -151,7 +157,7 @@ function Home() {
 
             </div>
 
-            <Cards  Data={api}/>
+            <Cards Refrance={ref}  Data={api}/>
             
         </>
     )

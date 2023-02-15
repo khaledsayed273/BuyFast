@@ -4,7 +4,7 @@ import { Store } from '../../store/store'
 import Wait from '../Wait'
 
 
-const Cards = ({ Data }) => {
+const Cards = ({ Data ,Refrance} ) => {
 
     const { AdditemFun } = useContext(Store)
 
@@ -30,7 +30,7 @@ const Cards = ({ Data }) => {
     }
 
     return (
-        <aside id='Cards'>
+        <aside ref={Refrance}>
             <Container>
                 <Typography className='forBefore' sx={{ display: "flex", justifyContent: "center", margin: "50px 0" }}>
                     <Typography sx={{ fontWeight: "bold" }} variant='h4' component="span">
