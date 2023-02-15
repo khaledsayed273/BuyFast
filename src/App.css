@@ -7,7 +7,13 @@
         font-size: 40px !important;
         margin-left: 5px;
     }
+}
 
+@media (max-height: 654px) {
+    section {
+        height: 80vh !important;
+    }
+    
 }
 
 @media (max-width: 465px) {
@@ -16,13 +22,15 @@
     }
 }
 
+
+
 .logo{
     font-size: 30px !important;
     text-decoration: none ;
 }
 
 .carousel-indicators {
-    bottom: 12%  ;
+    bottom: 2%  ;
     width: 30%;
 }
 

@@ -30,7 +30,7 @@ const Cards = ({ Data }) => {
     }
 
     return (
-        <aside>
+        <aside id='Cards'>
             <Container>
                 <Typography className='forBefore' sx={{ display: "flex", justifyContent: "center", margin: "50px 0" }}>
                     <Typography sx={{ fontWeight: "bold" }} variant='h4' component="span">
@@ -63,7 +63,7 @@ const Cards = ({ Data }) => {
                                                 Add To Cart
                                             </Button>
                                             <Button variant='outlined' sx={SecoundBtn} size="lg">
-                                                But Now
+                                                Buy Now
                                             </Button>
                                         </Typography>
                                     </Card>

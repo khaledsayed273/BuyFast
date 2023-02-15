@@ -56,9 +56,12 @@ function Nav() {
 
         if (tog === true) {
             ul.left = "0"
+            document.body.style.overflow = "hidden"
 
         } else {
             ul.left = "100%"
+            document.body.style.overflow = "auto"
+
         }
     }, [tog])
 
@@ -81,8 +84,6 @@ function Nav() {
 
 
 
-
-
     return (
         <nav className="navbar navbar-expand-lg bg-white p-3">
             <div className="container">
@@ -93,7 +94,7 @@ function Nav() {
                     <i className="fa-solid fa-bars"></i>
                 </button>
                 <div className="" >
-                    <ul ref={UL} className={`navbar-nav ms-auto ${styleNav.ulNav}`}>
+                    <ul ref={UL} className={`navbar-nav ms-auto  ${styleNav.ulNav}`}>
                         <div onClick={() => HandleTwostate()} className={styleNav.exit}>
                             <i className="fa-solid fa-circle-xmark"></i>
                         </div>
@@ -135,7 +136,7 @@ function Nav() {
 
                                                 />
                                                 <span style={{ marginRight: "10px", display: "flex", alignItems: "center" }}>
-                                                    <Typography sx={{ display: "flex", alignItems: "center", marginRight: "20px" }} component="div">
+                                                    <Typography sx={{ display: "flex", alignItems: "center", marginRight: "5%" }} component="div">
                                                         <Button onClick={() => Delete(item)} sx={{ marginTop: "10px" }} variant='contained' size='small' color="error" >Delete</Button>
                                                     </Typography>
                                                     <Typography sx={{ marginTop: "10px" }} display="flex" justifyContent="space-between" alignItems="center" flexDirection="column" component="div">

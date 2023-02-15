@@ -142,7 +142,7 @@ function Home() {
                             <div className="right d-flex flex-column align-items-start justify-content-center h-100">
                                 <h2 className='mb-4'>#NewArrivals</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptatem, maxime aliquid nulla obcaecati consequatur nobis dolorem delectus eos modi?</p>
-                                <button className='btn btn-danger mt-2'>Shop Now</button>
+                                <a href='#Cards' className='btn btn-danger mt-2 text-white'>Shop Now</a>
                             </div>
                         </div>
 
@@ -151,7 +151,7 @@ function Home() {
 
             </div>
 
-            <Cards Data={api}/>
+            <Cards  Data={api}/>
             
         </>
     )

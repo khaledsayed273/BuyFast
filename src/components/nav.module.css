@@ -1,7 +1,5 @@
 @media (max-width: 992px) {
     .carts{
-        position: absolute;
-        background-color: rgb(218 218 218);
         width: 95% !important;
         top: 56px;
         transform: translateX(-5%) !important;
@@ -21,6 +19,15 @@
     }
     
 }
+
+
+@media (max-width: 285px) {
+    .carts{
+        width: 100% !important;
+        padding: 10px  !important;
+    }
+}
+
 
 a{
     padding: 5px 20px !important;
@@ -45,6 +52,7 @@ a{
         right: 0;
         background-color: rgb(20, 30, 35);
         transition: 600ms;
+        overflow: auto;
     }
     .exit{
         display: block !important;
