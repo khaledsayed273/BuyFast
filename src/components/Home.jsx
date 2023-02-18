@@ -6,15 +6,15 @@ import axios from 'axios'
 
 function Home() {
 
-    const [api , setApi] = useState('')
+    const [api, setApi] = useState('')
 
     useEffect(() => {
         axios.get("https://fakestoreapi.com/products").then(res => {
             setApi(res.data)
         })
-    },[])
-    
-    
+    }, [])
+
+
 
     const Styles = {
         height: "calc(100vh - 82px)"
@@ -157,8 +157,8 @@ function Home() {
 
             </div>
 
-            <Cards Refrance={ref}  Data={api}/>
-            
+            <Cards Refrance={ref} Data={api} />
+
         </>
     )
 }

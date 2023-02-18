@@ -19,15 +19,15 @@ const Cards = ({ Data ,Refrance} ) => {
         }
     }
 
-    const SecoundBtn = {
-        padding: "11px", width: "45%", borderRadius: "20px", color: "white", background: "black", marginTop: "20px",
-        "&:hover": {
-            background: "trasparent",
-            color: "black",
-            fontWeight: "500",
-            border: "1px solid black "
-        }
-    }
+    // const SecoundBtn = {
+    //     padding: "11px", width: "45%", borderRadius: "20px", color: "white", background: "black", marginTop: "20px",
+    //     "&:hover": {
+    //         background: "trasparent",
+    //         color: "black",
+    //         fontWeight: "500",
+    //         border: "1px solid black "
+    //     }
+    // }
 
     return (
         <aside ref={Refrance}>
@@ -62,9 +62,7 @@ const Cards = ({ Data ,Refrance} ) => {
                                             <Button onClick={() => AdditemFun(item)} variant='outlined' sx={FirstBtn} size="lg">
                                                 Add To Cart
                                             </Button>
-                                            <Button variant='outlined' sx={SecoundBtn} size="lg">
-                                                Buy Now
-                                            </Button>
+                                            
                                         </Typography>
                                     </Card>
                                 </Grid>
