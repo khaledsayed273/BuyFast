@@ -53,18 +53,14 @@ function Nav() {
 
     useEffect(() => {
         const ul = UL.current.style
-
         if (tog === true) {
             ul.left = "0"
             document.body.style.overflow = "hidden"
-
         } else {
             ul.left = "100%"
             document.body.style.overflow = "auto"
-
         }
     }, [tog])
-
 
     useEffect(() => {
         const Cart = Carts.current.style
@@ -79,10 +75,6 @@ function Nav() {
             Cart.visibility = "hidden"
         }
     }, [togCart])
-
-
-
-
 
     return (
         <nav className="navbar navbar-expand-lg bg-white p-3">
@@ -99,19 +91,19 @@ function Nav() {
                             <i className="fa-solid fa-circle-xmark"></i>
                         </div>
                         <li className="nav-item">
-                            <NavLink onClick={() => setTog(!tog)} className={`nav-link ${styleNav.a}`} aria-current="page" to="/">Home</NavLink>
+                            <NavLink onClick={() => setTog(false)} className={`nav-link ${styleNav.a}`} to="/">Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink onClick={() => setTog(!tog)} className={`nav-link ${styleNav.a}`} to="/cards">cards</NavLink>
+                            <NavLink onClick={() => setTog(false)} className={`nav-link ${styleNav.a}`} to="/cards">cards</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink onClick={() => setTog(!tog)} to="/products" className={`nav-link ${styleNav.a}`} >Products</NavLink>
+                            <NavLink onClick={() => setTog(false)} className={`nav-link ${styleNav.a}`} to="/products" >Products</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className={`nav-link ${styleNav.a} disabled`} to="/blog" >Blog</NavLink>
+                            <NavLink onClick={() => setTog(false)} className={`nav-link ${styleNav.a}`} to="/admin" >Admin</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className={`nav-link ${styleNav.a} disabled`} to="/contact">Contact</NavLink>
+                            <NavLink onClick={() => setTog(false)} className={`nav-link ${styleNav.a} disabled`} to="/contact">Contact</NavLink>
                         </li>
                         <li className="nav-item align-items-center position-relative  d-flex ms-lg-2 me-lg-4 p-3 p-lg-0">
                             <div className='position-relative'>

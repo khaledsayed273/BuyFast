@@ -1,21 +1,22 @@
 import axios from 'axios'
-import React, { useState } from 'react'
-import { useEffect } from 'react'
+import React from 'react'
+import { useQuery } from 'react-query'
 import Cards from './cards/CardComponent'
 
 function Products() {
 
-    const [api , setApi] = useState('')
+    const GetDataAPI = () => {
+        return axios.get("https://fakestoreapi.com/products/category/women's clothing")
+    }
 
-    useEffect(() => {
-        axios.get("https://fakestoreapi.com/products/category/women's clothing").then(res => {
-            setApi(res.data)
-        })
-    },[])
+    const {data} = useQuery(
+        "Data-Cloth",
+        GetDataAPI
+    )
 
 
     return (
-        <Cards Data={api} />
+        <Cards Data={data?.data} />
     )
 }
 

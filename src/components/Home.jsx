@@ -1,23 +1,25 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import styleHome from './home.module.css'
 import img from '../imges/arrival-bg2-removebg-preview.png'
 import Cards from './cards/CardComponent'
 import axios from 'axios'
+import { useQuery } from 'react-query'
 
 function Home() {
 
-    const [api, setApi] = useState('')
+    const ref = useRef(null)
 
-    useEffect(() => {
-        axios.get("https://fakestoreapi.com/products").then(res => {
-            setApi(res.data)
-        })
-    }, [])
+    const GetData = () => {
+        return axios.get("https://fakestoreapi.com/products")
+    }
 
-
+    const API = useQuery(
+        "data-project",
+        GetData,
+    )
 
     const Styles = {
-        height: "calc(100vh - 82px)"
+        height: "calc(100vh - 77px)"
     }
 
     const style2 = {
@@ -28,7 +30,6 @@ function Home() {
         height: "100%",
         objectPosition: 'top center'
     }
-
 
     const DataText = [
         {
@@ -66,7 +67,6 @@ function Home() {
         },
     ]
 
-    const ref = useRef(null)
 
     const HandleScroll = (refrance) => {
         window.scrollTo({
@@ -134,16 +134,13 @@ function Home() {
                 </div>
             </div>
             <div className={styleHome.NewArrival}>
-
                 <div className='container p-4 h-100'>
                     <div className='row h-100 d-flex align-items-center'>
-
                         <div className='col-md-5 d-none d-md-block h-100'>
                             <div className="left h-100">
                                 <img className='w-100 h-100' src={img} alt="" />
                             </div>
                         </div>
-
                         <div className='col-md-6 col-12 h-100'>
                             <div className="right d-flex flex-column align-items-start justify-content-center h-100">
                                 <h2 className='mb-4'>#NewArrivals</h2>
@@ -151,13 +148,11 @@ function Home() {
                                 <button onClick={(() => HandleScroll(ref))} href='#Cards' className='btn btn-danger mt-2'>Shop Now</button>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
             </div>
 
-            <Cards Refrance={ref} Data={api} />
+            <Cards Refrance={ref} Data={API.data?.data}  />
 
         </>
     )

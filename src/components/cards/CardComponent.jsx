@@ -4,7 +4,7 @@ import { Store } from '../../store/store'
 import Wait from '../Wait'
 
 
-const Cards = ({ Data ,Refrance} ) => {
+const Cards = ({ Data ,Refrance }) => {
 
     const { AdditemFun } = useContext(Store)
 
@@ -29,6 +29,7 @@ const Cards = ({ Data ,Refrance} ) => {
     //     }
     // }
 
+
     return (
         <aside ref={Refrance}>
             <Container>
@@ -37,7 +38,7 @@ const Cards = ({ Data ,Refrance} ) => {
                         Our <Typography sx={{ color: "#f7444e", fontWeight: "bold" }} variant='h4' component="span">products</Typography>
                     </Typography>
                 </Typography>
-                {Data.length > 0 ?
+                {Data ?
                     <Grid container spacing={4}>
                         {Data.map((item) => {
                             return (

@@ -6,13 +6,6 @@ import { Typography } from '@mui/material';
 
 const Wait = () => {
 
-    
-    
-    
- 
-
-
-
     return (
         <Typography sx={{height: "400px" , display: "flex" , justifyContent:"center" , alignItems: "center" , width: "100% !important" }} component="div">
             <Box sx={{ display: 'flex' }}>

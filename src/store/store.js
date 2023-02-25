@@ -1,15 +1,12 @@
 import { createContext, useEffect, useState } from "react";
 
-
-
 export const Store = createContext()
 
 const Provider = ({ children }) => {
 
-    const [AddToCart, setAddToCart] = useState([])
-    
+    const [AddToCart, setAddToCart] = useState([])    
     const [Added, setAdded] = useState([])
-
+    
     // function to Return Data is have Qunt After Delete or Add New
     const filt = () => {
         const filter = AddToCart.filter((item) => {
@@ -24,7 +21,6 @@ const Provider = ({ children }) => {
         filt()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [AddToCart])
-
 
     // function Add items to card
 
@@ -47,7 +43,6 @@ const Provider = ({ children }) => {
             setAddToCart([...Added, Object.assign(item, { qut: 1 })])
         }
     }
-
 
     return (
         <Store.Provider value={{ Added, setAddToCart, AdditemFun }}>
